@@ -32,3 +32,37 @@ app.get('/api/books/:id', (req, res) => {
   res.json(b);
 });
 
+// POST add book (prevent duplicate id)
+app.post('/api/books', (req, res) => {
+  if (books.find(x => x.id == req.body.id)) {
+    return res.status(400).json({ msg: 'Duplicate book id' });
+  }
+  books.push(req.body);
+  save();
+  res.status(201).json({ msg: 'Book added' });
+});
+
+// PUT update book
+app.put('/api/books/:id', (req, res) => {
+  const i = books.findIndex(x => x.id == req.params.id);
+  if (i == -1) return res.status(404).json({ msg: 'Book not found' });
+  books[i] = req.body;
+  save();
+  res.json({ msg: 'Book updated' });
+});
+
+// DELETE - decrease availability by 1
+app.delete('/api/books/:id', (req, res) => {
+  const i = books.findIndex(x => x.id == req.params.id);
+  if (i == -1) return res.status(404).json({ msg: 'Book not found' });
+  if (books[i].available <= 0) {
+    return res.status(400).json({ msg: 'No copies available' });
+  }
+  books[i].available--;
+  save();
+  res.json({ msg: 'Availability decreased', book: books[i] });
+});
+
+load();
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+
