@@ -1,9 +1,9 @@
 # Library Management System
 
-**Student Name:** ______________  
-**Roll Number:** ______________  
-**Branch:** ______________  
-**Section:** ______________  
+**Student Name:** Akshit Tyagi 
+**Roll Number:** 2500320100148 
+**Branch:** CSE
+**Section:** 11
 
 ## Description
 A simple Library Management REST API built with Node.js and Express.js.  
