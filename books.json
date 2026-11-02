@@ -1,0 +1,34 @@
+[
+  {
+    "id": "101",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "category": "Fiction",
+    "quantity": 5,
+    "available": 5
+  },
+  {
+    "id": "102",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "category": "Programming",
+    "quantity": 3,
+    "available": 3
+  },
+  {
+    "id": "103",
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen",
+    "category": "Computer Science",
+    "quantity": 2,
+    "available": 0
+  },
+  {
+    "id": "104",
+    "title": "CodingInJavaScript",
+    "author": "Robert Jr.",
+    "category": "Programming",
+    "quantity": 6,
+    "avaliable": 4
+  }
+]
